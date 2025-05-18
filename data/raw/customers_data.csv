@@ -1,5 +1,5 @@
 CustomerID,Name,Region,JoinDate,LoyaltyPts,PreferredContactMethod
-1000,Robert Gomez,West,2/25/2024,12394,Email
+1000,Robert Gomez,West,2/25/2024,999999999,Email
 1001,John Silva,East,12/1/2020,22994,Cell
 1002,Mark Marshall,Central,8/8/2020,6572,Cell
 1003,David Brennan,North,5/21/2020,15631,Cell
@@ -17,7 +17,7 @@ CustomerID,Name,Region,JoinDate,LoyaltyPts,PreferredContactMethod
 1015,Jennifer Rodgers,North,2/12/2023,1019,Email
 1016,Andrea Roberts,EAST,5/16/2021,23379,Email
 1017,Brittney Burnett,North,7/3/2020,20563,Cell
-1018,Edwin Garrison,south-west,8/31/2020,6332,Cell
+1018,Edwin Garrison,south-west,8/31/2020,0,Cell
 1019,Michelle Torres,Central,11/18/2020,9260,Cell
 1020,Michelle Brewer,East,7/14/2021,19124,Email
 1021,Aaron Burnett,South,2/13/2024,16657,Cell
@@ -52,7 +52,7 @@ CustomerID,Name,Region,JoinDate,LoyaltyPts,PreferredContactMethod
 1050,Jeffrey Mclaughlin,EAST,3/28/2022,253,Cell
 1051,Amy Nguyen,Central,2/13/2024,18912,Email
 1052,Brandon Hinton,south-west,11/10/2022,7167,Email
-1053,Benjamin Cline,east,1/25/2022,3573,Cell
+1053,Benjamin Cline,east,1/25/2022,999999999,Cell
 1054,Laura Mcdonald,South,12/3/2022,4760,Cell
 1055,William Benitez,east,11/4/2020,9215,Email
 1056,Kristina Wilson,east,5/15/2023,5355,Email
@@ -191,7 +191,7 @@ CustomerID,Name,Region,JoinDate,LoyaltyPts,PreferredContactMethod
 1189,Jennifer Farrell,North,11/18/2022,13283,Email
 1190,Elizabeth Robinson,south-west,12/27/2023,13317,Email
 1191,Kyle Smith Jr.,South,10/31/2023,5926,Email
-1192,Gregory Medina,EAST,6/6/2020,19094,Email
+1192,Gregory Medina,EAST,6/6/2020,999999999,Email
 1193,Nancy King,South,5/23/2022,9278,Cell
 1194,Casey Brown,Central,2/9/2024,9218,Email
 1195,Michael Lee,south-west,8/22/2023,10028,Email
