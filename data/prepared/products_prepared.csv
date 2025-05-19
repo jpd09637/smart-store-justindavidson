@@ -1,11 +1,11 @@
 productid,productname,category,unitprice,stockquantity,preferredcustomerdiscountapplicable
 2000,Electronics-Be,Electronics,969.31,8,Yes
 2001,Electronics-Be,Clothing,412.35,2,No
-2002,Office-Family,Clothing,866.0,5,Yes
+2002,Office-Family,Clothing,866,5,Yes
 2003,Electronics-Training,Clothing,385.18,6,No
 2004,Office-Where,Home,927.25,6,Yes
 2005,Office-Huge,Home,428.78,0,No
-2006,Office-Class,Clothing,198.0,29,No
+2006,Office-Class,Clothing,198,29,No
 2007,Clothing-Over,Electronics,583.39,0,Yes
 2008,Electronics-Skin,Home,66.59,13,No
 2009,Office-Raise,Clothing,66.31,39,No
@@ -17,7 +17,7 @@ productid,productname,category,unitprice,stockquantity,preferredcustomerdiscount
 2015,Office-Itself,Clothing,674.97,8,Yes
 2016,Home-He,Office,323.02,8,No
 2017,Electronics-Feeling,Electronics,463.7,0,No
-2018,Electronics-Nature,Electronics,542.26,3,1
+2018,Electronics-Nature,Electronics,542.26,3,Yes
 2019,Home-History,Clothing,933.93,10,Yes
 2020,Electronics-Share,Clothing,375.83,5,No
 2021,Clothing-Skill,Office,835.41,10,Yes
@@ -40,7 +40,7 @@ productid,productname,category,unitprice,stockquantity,preferredcustomerdiscount
 2038,Office-Soon,Clothing,926.51,0,Yes
 2039,Clothing-Need,Clothing,976.44,5,Yes
 2040,Clothing-Determine,Office,34.54,5,No
-2041,Home-Assume,Office,804.21,3,1
+2041,Home-Assume,Office,804.21,3,Yes
 2042,Clothing-Lawyer,Home,167.61,11,No
 2043,Electronics-Practice,Office,873.45,9,Yes
 2044,Office-Society,Clothing,207.58,2,No
@@ -48,7 +48,7 @@ productid,productname,category,unitprice,stockquantity,preferredcustomerdiscount
 2046,Clothing-Worry,Clothing,33.43,27,No
 2047,Clothing-Hair,Office,334.98,2,No
 2048,Electronics-Candidate,Home,357.63,4,No
-2049,Office-Easy,Home,939.84,5,1
+2049,Office-Easy,Home,939.84,5,Yes
 2050,Electronics-Young,Home,186.78,10,No
 2051,Home-Century,Electronics,117.32,20,No
 2052,Office-Year,Home,731.26,8,Yes
