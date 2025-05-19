@@ -23,3 +23,7 @@ git add .
 git commit -m "ran initial data_prep.py"
 git push -u origin main
 ```
+# Module 3 Changes
+Added data scrubber script
+Added data preparation scripts 
+Added output of data preparation scripts (new csv files found in data/prepared)
