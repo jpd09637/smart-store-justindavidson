@@ -1,6 +1,10 @@
+import sys
+import pathlib
+sys.path.append(str(pathlib.Path(__file__).resolve().parent.parent))
 import unittest
 import pandas as pd
-from scripts.data_scrubber import DataScrubber
+from utils.data_scrubber import DataScrubber
+print("Loaded DataScrubber from:", DataScrubber.__module__)
 
 class TestDataScrubber(unittest.TestCase):
 
@@ -14,8 +18,8 @@ class TestDataScrubber(unittest.TestCase):
         self.df = pd.DataFrame(data)
         self.scrubber = DataScrubber(self.df)
 
-    def test_remove_duplicates(self):
-        self.scrubber.remove_duplicates()
+    def test_remove_duplicate_records(self):
+        self.scrubber.remove_duplicate_records()
         self.assertEqual(self.scrubber.df.duplicated().sum(), 0)
 
     def test_handle_missing_data_drop(self):
