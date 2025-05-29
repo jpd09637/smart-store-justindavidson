@@ -1,4 +1,4 @@
-CustomerID,Name,Region,JoinDate,LoyaltyPts,PreferredContactMethod
+customer_id,name,region,join_date,loyalty_pts,preferred_contact_method
 1000,Robert Gomez,West,2/25/2024,15620,Email
 1001,John Silva,East,12/1/2020,22994,Cell
 1002,Mark Marshall,Central,8/8/2020,6572,Cell
