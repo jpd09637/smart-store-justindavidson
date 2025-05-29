@@ -1,4 +1,4 @@
-TransactionID,SaleDate,CustomerID,ProductID,StoreID,CampaignID,SaleAmount,AmtSoldFiscalYear,PaymentType
+transaction_id,sale_date,customer_id,product_id,store_id,campaign_id,sale_amount,amt_sold_fiscal_year,payment_type
 1,5/4/2025,1034,2059,402,0,2048.2,15,Credit
 2,5/4/2025,1066,2048,403,1,321.87,70,PayPal
 3,5/4/2025,1116,2041,403,3,3216.84,60,Cash/Debit
@@ -1998,5 +1998,4 @@ TransactionID,SaleDate,CustomerID,ProductID,StoreID,CampaignID,SaleAmount,AmtSol
 1997,5/4/2025,1189,2062,401,0,2477.44,69,Credit
 1998,5/4/2025,1140,2044,401,0,207.58,,
 1999,5/4/2025,1106,2061,403,3,599.76,10,Cash/Debit
-2000,5/4/2025,1086,2048,404,1,321.87,,
-6,5/4/2025,1089,2028,401,0,1275.88,45,Cash/Debit
+2000,5/4/2025,1086,2048,404,1,321.87,,PayPal
