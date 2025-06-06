@@ -48,3 +48,14 @@ Below are screenshots of my smart_sales.db tables:
 ![Sale Data Screenshot](/data/dw/sale%20data.JPG?raw=true)
 
 It's cool being able to add screenshots to markdown files.
+
+# Module 5 Changes
+
+Used Power BI to generate the below visualizations:
+
+![Top Customer Screenshot](/data/dw/top%20customers.jpg?raw=true)
+
+![Product Category Slice Screenshot](/data/dw/category-product%20breakdown%20slice.jpg)
+
+![Store ID Sale Amount Line Chart](/data/dw/store%20id%20line%20chart.jpg)
+
