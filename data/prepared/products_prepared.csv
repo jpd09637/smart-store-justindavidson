@@ -1,4 +1,4 @@
-productid,productname,category,unitprice,stockquantity,preferred_customer_discount_applicable
+product_id,product_name,category,unit_price,stock_quantity,preferred_customer_discount_applicable
 2000,Electronics-Be,Electronics,969.31,8,Yes
 2001,Electronics-Be,Clothing,412.35,2,No
 2002,Office-Family,Clothing,866,5,Yes

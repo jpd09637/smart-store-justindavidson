@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS customer (
             product_id INTEGER PRIMARY KEY,
             product_name TEXT,
             category TEXT,
-            unitprice FLOAT,
+            unit_price FLOAT,
             stock_quantity INTEGER,
             preferred_customer_discount_applicable TEXT
         )

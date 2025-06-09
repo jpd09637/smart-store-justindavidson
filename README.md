@@ -59,3 +59,104 @@ Used Power BI to generate the below visualizations:
 
 ![Store ID Sale Amount Line Chart](/data/dw/store%20id%20line%20chart.jpg)
 
+# Module 6 Project Work
+
+### Section 1
+The business goal of this project is to explore which region's customers are buying the most electronics. 
+We're having trouble with transportation costs with our electronic goods and are investigating customer's purchasing habits. If regional electronic sales are not meeting a specific dollar amount, we're going to warehouse electronics at for said region(s) at HQ and ship them on-demand rather than aiming to keep the store stocked at all times.
+
+### Section 2
+The data used in this analysis is coming from a data warehouse and prepared `csv` files comprised of customer data, product data, and sales data for 5/4/2025. The sales data for 5/4/2025 has a running column that shows how many of a given product id has been sold in the fiscal year.
+
+### Section 3
+The tools used for this are `Excel` for data cleaning, `Python` and `SQLite` for making a data warehouse in the form of a `.db` file, and `R` for the data transformation and analysis. We're using these tools because of the following reasons:
+
+- `Excel` is a spread-sheet editor that uses buttons and functions to speed up data cleaning.
+- `Python` and `SQLite` together allows us to write scripts to make a server-less database for our data.
+- `R` is the tool I personally use the most for OLAP work.
+
+### Section 4
+The dimensions of the dataset are short - it's just `region` and `total sales`.
+
+The logic behind this is simple - I use the following `R` code snippet to join the tables I uploaded as dataframes together in to a dataframe called `full_data`:
+
+```
+full_data <- sale_df %>%
+  left_join(product_df, by = "product_id") %>%
+  left_join(customer_df, by = "customer_id") 
+  ```
+Then I filter out any rows that don't pertain to electronics data as well as any data that shows as NA post-data cleaning. I also delete duplicate product Ids:
+
+```
+# Filter for Electronics category
+electronics_sales <- full_data %>%
+  filter(category == "Electronics")
+
+# Remove duplicate product_id per region to avoid double-counting
+electronics_unique <- electronics_sales %>%
+  distinct(region, product_id, .keep_all = TRUE)
+
+# Drop rows that return NA values post-data cleaning
+
+ sales_by_region <- electronics_unique %>%
+  filter(!is.na(region)) %>% 
+  group_by(region) %>%
+  summarise(total_sales_fy = sum(total_sales_fy, na.rm = TRUE)) %>%
+  arrange(desc(total_sales_fy)) 
+  ```
+
+Then I make a dataframe that shows the `region` and `total sales` data from the `electronics_unique` dataframe called `sales_by_region`:
+
+```
+# Group by region and summarize
+
+sales_by_region <- electronics_unique %>%
+  filter(!is.na(region)) %>% 
+  group_by(region) %>%
+  summarise(total_sales_fy = sum(total_sales_fy, na.rm = TRUE)) %>%
+  arrange(desc(total_sales_fy))
+  ```
+
+Lastly, I make a ggplot2 visualization using the following script:
+```
+ggplot(sales_by_region, aes(x = reorder(region, -total_sales_fy), y = total_sales_fy, fill = region)) +
+  geom_bar(stat = "identity") +
+  geom_text(
+    aes(label = label_dollar()(total_sales_fy)),
+    color = "white",
+    fontface = "bold",
+    vjust = 2.5,  
+    size = 4
+  ) +
+  scale_fill_brewer(palette = "Set2") + 
+  labs(
+    title = "Total Electronics Sales by Region (Fiscal Year)",
+    x = "Region",
+    y = "Total Sales ($)",
+    fill = "Region"
+  ) +
+  scale_y_continuous(labels = label_dollar()) +
+  theme_minimal() +
+  theme(
+    text = element_text(size = 12),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+  ```
+The output of the script is this:
+
+![Electronics Sales by Region](/data/dw/Electronic%20Sales%20by%20Region.png)
+
+### Section 5
+
+The total electronics sales based on the data pool really isn't that different across the regions. A range of sub-$80k between the east and south regions is significant across the fiscal year, but it isn't a super jarring difference. However, it is enough to suggest actions need taken.
+
+### Section 6
+
+My suggestion is to go through with warehousing electronics that are primarily sold in the southern region. More research need to be done to figure out what these goods are, but we're moving forward with the proposed plan in Section 1.
+
+### Section 7
+
+Challenges encountered in analysis included ensuring data was formatted correctly (region case sensitivity in the customer dataframe, unit_price in the product dataframe) as well as ensuring the graph made using the ggplot2 package in R came out correctly. These challenges were overcame via thorough data cleaning (my data cleaning scripts worked, but I still used the PROPER function in Excel to further ensure the regions were in the same case as each other) and then using the functions found in the ggplot2 package to ensure the graph was readable - this included ensuring the y-axis was in dollars rather than scientific notation, putting the labels on the x-axis at an angle for readability, making sure the bars colors weren't too harsh.
+
+Below is a screenshot of my R environment:
+![R Environment](image.png)
